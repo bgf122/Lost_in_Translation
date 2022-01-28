@@ -9,7 +9,7 @@ const NavBar = () => {
             <Container>
                 <Navbar.Brand href="/">Lost in Translation</Navbar.Brand>
                 <Dropdown>
-                    <Dropdown.Toggle as={NavLink}><Navbar.Toggle/></Dropdown.Toggle>
+                    <Dropdown.Toggle as={NavLink}><div>Hello</div></Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item href="/profile">Profile</Dropdown.Item>
                         <Dropdown.Item href="/">Log Out</Dropdown.Item>
