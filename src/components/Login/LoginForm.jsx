@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import {loginUser} from "../../api/user"
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
@@ -18,8 +20,14 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const [ loading, setLoading ] = useState(false)
+
+  const onSubmit = async({ username }) => {
+    setLoading(true)
+    const [error, user] = await loginUser(username)
+    console.log('Error: ', error)
+    console.log('User: ', user)
+    setLoading(false)
   };
   console.log(errors);
 
@@ -47,14 +55,16 @@ const LoginForm = () => {
                 placeholder="What's your name?"
                 {...register("username", usernameConfig)}
               />
-              <Button variant="outline-secondary">
+              <Button type="submit" disabled={ loading } variant="outline-secondary">
                 <span className="material-icons blue md-48">
                   arrow_circle_right
                 </span>
               </Button>
+              
             </InputGroup>
           </Col>
         </Row>
+        { loading &&  <p> Logging in...</p>}
         {errorMessage}
       </Form>
     </>
