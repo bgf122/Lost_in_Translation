@@ -3,6 +3,7 @@ import { Button, Container } from "react-bootstrap";
 import SignSymbol from "./SignSymbol"
 import { addTranslation } from "../../api/translation";
 import { storageRead } from "../../utils/storage";
+import withAuth from "../../hoc/withAuth";
 
 const Translation = () => {
     const [text, setText] = useState("")
@@ -38,4 +39,4 @@ const Translation = () => {
     )
 }
 
-export default Translation
+export default withAuth(Translation)
