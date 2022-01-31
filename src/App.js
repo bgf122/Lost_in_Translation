@@ -7,18 +7,18 @@ import Container from "react-bootstrap/Container";
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <Container className="p-3">
-        <Routes>
-          <Route path="/" element={<Start />} />
-          <Route path="/translate" element={<Translate />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </Container>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<NavBar />
+			<Container className="p-3">
+				<Routes>
+					<Route path="/" element={<Start />} />
+					<Route path="/translate" element={<Translate />} />
+					<Route path="/profile" element={<Profile />} />
+				</Routes>
+			</Container>
+		</BrowserRouter>
+	);
 }
 
 export default App;

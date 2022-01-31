@@ -6,12 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import AppContext from "./context/AppContext";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppContext>
-      <App />
-    </AppContext>
-  </React.StrictMode>,
-  document.getElementById("root")
+	<React.StrictMode>
+		<AppContext>
+			<App />
+		</AppContext>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
