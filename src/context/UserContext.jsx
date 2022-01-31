@@ -11,8 +11,8 @@ export const useUser = () => {
 
 // Provider -> managing state
 const UserProvider = ({ children }) => {
-  
   const [user, setUser] = useState(storageRead( STORAGE_KEY_USER ));
+
 
   const state = {
     user,
