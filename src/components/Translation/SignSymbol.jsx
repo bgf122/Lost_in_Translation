@@ -4,7 +4,7 @@ const SignSymbol = (props) => {
 
     return (
         <>
-            <img src={`${path}/${letter}.png`} alt={`${letter}`}></img>
+            <img width={"75 px"} src={`${path}/${letter}.png`} alt={`${letter}`}></img>
         </>
     )
 
