@@ -5,6 +5,7 @@ import { addTranslation } from "../../api/translation";
 import { useUser } from "../../context/UserContext";
 import { storageRead, storageSave } from "../../utils/storage";
 
+
 const Translation = () => {
     const [text, setText] = useState("")
     const [translation, setTranslation] = useState([])
