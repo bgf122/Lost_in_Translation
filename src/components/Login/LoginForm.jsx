@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { loginUser } from "../../api/user"
+import { loginUser } from "../../api/user";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
@@ -8,7 +8,8 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { storageSave } from "../../utils/storage";
-
+import { useUser } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const usernameConfig = {
   required: true,
@@ -16,30 +17,40 @@ const usernameConfig = {
 };
 
 const LoginForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  // Hooks
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { user, setUser } = useUser();
+  const navigate = useNavigate();
 
   // Local State
-  const [ loading, setLoading ] = useState(false)
-  const [ apiError, setApiError ] = useState(null)
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState(null);
 
   // Side Effects
   useEffect(() => {
-    
-  }, [])
+    if (user !== null) {
+      navigate("translate");
+    }
+  }, [user, navigate]);
 
   // Event Handlers
-  const onSubmit = async({ username }) => {
-    setLoading(true)
-    const [error, user] = await loginUser(username)
-    if(error!=null) {
-      setApiError(error)
+  const onSubmit = async ({ username }) => {
+    setLoading(true);
+    const [error, userResponse] = await loginUser(username);
+    if (error != null) {
+      setApiError(error);
     }
-    if(user !== null){
-      storageSave('translate-user', user)
+    if (userResponse !== null) {
+      storageSave("translate-user", userResponse);
+      setUser(userResponse);
     }
-    setLoading(false)
+    setLoading(false);
   };
-  
+
   // Render Functions
   const errorMessage = (() => {
     if (!errors.username) {
@@ -65,17 +76,20 @@ const LoginForm = () => {
                 placeholder="What's your name?"
                 {...register("username", usernameConfig)}
               />
-              <Button type="submit" disabled={ loading } variant="outline-secondary">
+              <Button
+                type="submit"
+                disabled={loading}
+                variant="outline-secondary"
+              >
                 <span className="material-icons blue md-48">
                   arrow_circle_right
                 </span>
               </Button>
-              
             </InputGroup>
           </Col>
         </Row>
-        { loading &&  <p> Logging in...</p> }
-        { apiError && <p>{ apiError }</p> }
+        {loading && <p> Logging in...</p>}
+        {apiError && <p>{apiError}</p>}
         {errorMessage}
       </Form>
     </>
