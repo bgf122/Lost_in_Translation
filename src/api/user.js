@@ -1,6 +1,4 @@
-import { createHeaders } from "./index";
-
-const apiUrl = process.env.REACT_APP_API_URL;
+import { createHeaders, apiUrl } from ".";
 
 export const checkForUser = async (username) => {
   try {
