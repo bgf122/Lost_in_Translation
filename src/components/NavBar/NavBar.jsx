@@ -1,12 +1,12 @@
 import { Container,Navbar, Dropdown, NavLink } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import "./navbar.css"
 
-
 const NavBar = () => {
     const navigate = useNavigate()
-    const { setUser } = useUser()
+    const location = useLocation()
+    const { user, setUser } = useUser()
 
     const logOut = () => {
         localStorage.clear()
@@ -14,17 +14,33 @@ const NavBar = () => {
         navigate("/")
     }
 
+    const navigateToPath = () => {
+        let path = ""
+        let text = ""
+        if (location.pathname === "/translate") {
+            path = "profile"
+            text = "Profile"
+        } else if (location.pathname === "/profile"){
+            path = "translate"
+            text = "Translate"
+        }
+        
+        return (
+            <Dropdown.Item onClick={() => navigate(`/${path}`)}>{text}</Dropdown.Item>
+        )
+    }
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand href="/">Lost in Translation</Navbar.Brand>
-                <Dropdown>
-                    <Dropdown.Toggle as={NavLink}><div>Hello</div></Dropdown.Toggle>
+                {user !== null ? <Dropdown>
+                    <Dropdown.Toggle as={NavLink}><img src="/assets/user.png" width={"50 px"} alt="user logo"></img></Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-                        <Dropdown.Item onClick={() => logOut()}>Log Out</Dropdown.Item>
+                        {navigateToPath()}
+                        <Dropdown.Item onClick={() => logOut()}>Logout</Dropdown.Item>
                     </Dropdown.Menu>
-                </Dropdown>
+                </Dropdown> : <></>} 
             </Container>
         </Navbar>
     )
