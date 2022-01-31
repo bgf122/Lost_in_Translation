@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import {loginUser} from "../../api/user"
+import { loginUser } from "../../api/user"
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { storageSave } from "../../utils/storage";
+
 
 const usernameConfig = {
   required: true,
@@ -14,23 +16,31 @@ const usernameConfig = {
 };
 
 const LoginForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
+  // Local State
   const [ loading, setLoading ] = useState(false)
+  const [ apiError, setApiError ] = useState(null)
 
+  // Side Effects
+  useEffect(() => {
+    
+  }, [])
+
+  // Event Handlers
   const onSubmit = async({ username }) => {
     setLoading(true)
     const [error, user] = await loginUser(username)
-    console.log('Error: ', error)
-    console.log('User: ', user)
+    if(error!=null) {
+      setApiError(error)
+    }
+    if(user !== null){
+      storageSave('translate-user', user)
+    }
     setLoading(false)
   };
-  console.log(errors);
-
+  
+  // Render Functions
   const errorMessage = (() => {
     if (!errors.username) {
       return null;
@@ -64,7 +74,8 @@ const LoginForm = () => {
             </InputGroup>
           </Col>
         </Row>
-        { loading &&  <p> Logging in...</p>}
+        { loading &&  <p> Logging in...</p> }
+        { apiError && <p>{ apiError }</p> }
         {errorMessage}
       </Form>
     </>
