@@ -2,19 +2,21 @@ import { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import SignSymbol from "./SignSymbol"
 import { addTranslation } from "../../api/translation";
-import { storageRead } from "../../utils/storage";
+import { useUser } from "../../context/UserContext";
+import { storageRead, storageSave } from "../../utils/storage";
 
 const Translation = () => {
     const [text, setText] = useState("")
     const [translation, setTranslation] = useState([])
-    const user = storageRead("translate-user")
+    const { user, setUser } = useUser()
 
     const handleTextChange = (event) => {
         setText(event.target.value)
     }
 
-    const translate = () => {
+    const translate = async () => {
         const letters = []
+
 
         for (let i = 0; i < text.length; i++) {
             let ASCII = text.charAt(i).toLowerCase().charCodeAt(0)
@@ -23,7 +25,15 @@ const Translation = () => {
             }
         }
         setTranslation(letters)
-        if (letters.length > 0) addTranslation(user, text)
+
+        if (letters.length > 0) {
+            let userResponse = await addTranslation(user, text)
+            console.log(userResponse)
+            storageSave("translate-user", userResponse)
+            setUser( storageRead("translate-user") )
+        }
+        
+        
     }
 
     return (

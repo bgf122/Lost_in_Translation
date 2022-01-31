@@ -13,7 +13,7 @@ export const addTranslation = async (user, translation) => {
             throw new Error('Could not update translations history')
         }
         const data = await response.json();
-        return [null, data];
+        return data
       } catch (error) {
         return [error.message, []];
       }
