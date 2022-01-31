@@ -1,4 +1,5 @@
 import Translation from "../components/Translation/Translation";
+import withAuth from "../hoc/withAuth";
 
 const Translate = () => {
     return (
@@ -8,4 +9,4 @@ const Translate = () => {
         </>
     )
 }
-export default Translate
+export default withAuth(Translate)

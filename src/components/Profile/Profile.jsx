@@ -1,4 +1,4 @@
-import withAuth from "../../hoc/withAuth"
+
 
 const Profile = () => {
     return (
@@ -7,4 +7,4 @@ const Profile = () => {
     )
 }
 
-export default withAuth(Profile)
+export default Profile
