@@ -1,5 +1,5 @@
-const apiKey = process.env.local.REACT_APP_API_KEY
-export const apiUrl = process.env.local.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY;
+export const apiUrl = process.env.REACT_APP_API_URL;
 
 export const createHeaders = () => {
     return {
