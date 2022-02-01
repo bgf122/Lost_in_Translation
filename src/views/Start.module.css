@@ -1,0 +1,31 @@
+.ContainerStart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  padding: 4%;
+}
+.ContainerTop {
+  background-color: #ffc75f;
+}
+
+.ColLeft {
+  text-align: center;
+  
+}
+
+.ColRight {
+  
+  align-self: center;
+  color: white;
+ 
+}
+h2 {
+    white-space: nowrap;
+  font-family: "Love Ya Like A Sister", cursive;
+  
+}
+p {
+  font-size: 1.5em;
+  font-family: "Sanchez", serif;
+}

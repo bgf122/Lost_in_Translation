@@ -1,0 +1,26 @@
+.DropdownToggle::after {
+  display: none;
+}
+
+.Navbar {
+  background-color: #ffc75f;
+  border-bottom: 1px groove #969696;
+}
+
+.Brand {
+  font-size: xx-large;
+  color: white !important;
+  font-family: "Love Ya Like A Sister", cursive;
+}
+
+.DropdownMenu {
+  background-color: #e7b355;
+  font-family: "Sanchez", serif;
+}
+.DropdownItem {
+  color: white;
+}
+.DropdownItem:hover {
+background-color: white;
+color: #e7b355;
+}
