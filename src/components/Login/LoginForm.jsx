@@ -7,6 +7,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import { storageSave } from "../../utils/storage";
 import { useUser } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
@@ -67,32 +68,34 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <Row className="align-items-center">
-          <Col md={6}>
-            <InputGroup className="mb-3">
-              <FormControl
-                size="lg"
-                type="text"
-                placeholder="What's your name?"
-                {...register("username", usernameConfig)}
-              />
-              <Button
-                type="submit"
-                disabled={loading}
-                variant="outline-secondary"
-              >
-                <span className="material-icons blue md-48">
-                  arrow_circle_right
-                </span>
-              </Button>
-            </InputGroup>
-          </Col>
-        </Row>
-        {loading && <p> Logging in...</p>}
-        {apiError && <p>{apiError}</p>}
-        {errorMessage}
-      </Form>
+      <Container>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Row className="justify-content-md-center">
+            <Col lg={6}>
+              <InputGroup className="mb-3">
+                <FormControl
+                  size="lg"
+                  type="text"
+                  placeholder="What's your name?"
+                  {...register("username", usernameConfig)}
+                />
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  variant="outline-secondary"
+                >
+                  <span className="material-icons blue md-48">
+                    arrow_circle_right
+                  </span>
+                </Button>
+              </InputGroup>
+              {loading && <p> Logging in...</p>}
+              {apiError && <p>{apiError}</p>}
+              {errorMessage}
+            </Col>
+          </Row>
+        </Form>
+      </Container>
     </>
   );
 };
