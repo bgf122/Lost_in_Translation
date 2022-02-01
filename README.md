@@ -4,14 +4,14 @@
 
 Lost in Translation - Single Page Application with React.js library - Noroff Assignment 3
 
-TODO: Fill out this long description.
-
 The application has one main feature: to act as a “translator” from regular text to sign language. The application translates words and short sentences to American sign language. 
 
 ## Table of Contents
 
 - [Install](#install)
 - [Usage](#usage)
+- [Component tree](#component-tree)
+- [UI sketch](#UI-sketch)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
