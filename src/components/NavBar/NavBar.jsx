@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
 import NavLink from "react-bootstrap/NavLink";
+import ProfileHeader from "../Profile/ProfileHeader"
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -47,6 +48,13 @@ const NavBar = () => {
           ></img>{" "}
           Lost in Translation
         </Navbar.Brand>
+
+        {user !== null ? (
+        <ProfileHeader />
+        ) : (
+          <></>
+        )}
+        
         {user !== null ? (
           <Dropdown>
             <Dropdown.Toggle as={NavLink} className={ styles.DropdownToggle }>

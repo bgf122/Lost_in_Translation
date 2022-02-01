@@ -7,6 +7,8 @@ import { useUser } from "../../context/UserContext";
 import { storageRead, storageSave } from "../../utils/storage";
 import ProfileTranslateHistoryItem from "./ProfileTranslateHistoryItem"
 import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/Container"
+import styles from "./ProfileTranslateHistory.module.css"
 
 const ProfileTranslateHistory = () => {
 
@@ -40,20 +42,25 @@ const ProfileTranslateHistory = () => {
         
     return (
         <>
-        <Row xs lg="7" className="mb-10">
-            <h3>Translate History</h3>
+        <Container fluid className= { styles.ContainerTop }>
+        </Container>
+        <Container className={ styles.TranslateHistory }>
+        <Row>
+        <Row className={ styles.RowHeader }>
+            <h2>Translate History</h2>
         </Row>
-        <Row className="justify-content-mb-2">
-            <Col md={5}>
+            <Col md={7}>
                 <ListGroup className="mt-1" variant="flush">
                     { translationList }
-                <Button className="mt-1" variant="outline-secondary" onClick={() => clearTranslations()}>Clear</Button>
+                
                 </ListGroup>
                 
             </Col>
-            <Col md={{span: 5, offset: 2}}>
+
+            <Col md={{span: 3, offset: 1}}>
             <ListGroup>
-                <Button onClick={() => navigate("/translate")} className="mb-1" variant="outline-success">
+            <Button className="" variant="outline-secondary" onClick={() => clearTranslations()}>Clear</Button>
+                <Button onClick={() => navigate("/translate")} className="" variant="outline-success">
                     Back to Translate
                 </Button>
                 <Button onClick={() => logout()} variant="outline-danger">
@@ -62,7 +69,10 @@ const ProfileTranslateHistory = () => {
             </ListGroup>
            
             </Col>
+            
         </Row>
+        </Container>
+        
             
         </>
         

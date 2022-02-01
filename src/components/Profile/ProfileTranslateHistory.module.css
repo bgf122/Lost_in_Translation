@@ -1,0 +1,28 @@
+.ContainerTop {
+  background-color: #ffc75f;
+  margin: 0;
+  padding-top: 9em;
+  
+}
+
+h2 {
+  font-family: "Love Ya Like A Sister", cursive;
+}
+
+.TranslateHistory {
+    width: 80%;
+    margin-top: -5em;
+    font-family: "Sanchez", serif;
+    padding: 2%;
+    border: 8px solid black;
+    border-radius: 8px;
+    padding-bottom: 2em;
+}
+
+.RowHeader {
+    padding-bottom: 2%;
+}
+
+button {
+    margin: 5%;
+}
