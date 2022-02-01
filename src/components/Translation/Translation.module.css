@@ -1,7 +1,10 @@
 .ContainerInput {
-    padding-top: 10em;
-    padding-bottom: 3em;
+    padding-top: 5em;
+    padding-bottom: 10em;
     align-content: flex-end;  
+    background-color: #ffc75f;
+    margin: 0;
+    
 }
 
 .ButtonTranslate {
@@ -9,11 +12,22 @@
     font-family: "Sanchez", serif;
 }
 
+.ButtonTranslate:hover{
+    background-color: white;
+    color: #845EC2;
+    border: 2px solid #845EC2;
+}
+
+.ButtonTranslate:active{
+    background-color: #845EC2;
+}
+
 .ContainerTranslations {
+    margin-top: -5em;
     padding: 3%;
     text-align: center;
     border-radius: 12px;
-    border: 2px groove #969696;
+    border: 5px solid black;
     width: 60%;
     min-height: 200px;
     background-color: white;

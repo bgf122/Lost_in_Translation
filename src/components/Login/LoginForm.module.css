@@ -9,3 +9,16 @@
     border: 1px solid #ced4da;
 
 }
+
+.LoginFormContainer {
+    justify-content: center;
+    margin-top: -3em;
+    
+    
+}
+
+.InputGroup {
+    border: 8px solid black;
+    border-radius: 8px;
+    margin: 1px;
+}
