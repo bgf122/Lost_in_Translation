@@ -1,6 +1,6 @@
 const ProfileTranslateHistoryItem = ({ translation }) => {
     return (
-        <li>{ translation }</li>
+            <li>{ translation }</li>
     )
 }
 
