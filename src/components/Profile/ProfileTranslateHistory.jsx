@@ -15,7 +15,7 @@ const ProfileTranslateHistory = () => {
     let translations = []
     
 
-    for (let i = user.translations.length - 1; i > 0; i--) {
+    for (let i = user.translations.length - 1; i >= 0; i--) {
         if (user.translations[i].deleted !== true) translations.push(user.translations[i])
     }
 

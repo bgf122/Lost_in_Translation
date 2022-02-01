@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-import Login from './components/Login/Login';
-
-function App() {
-  return (
-    <Login>
-      
-    </Login>
-  );
-=======
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Start from "./views/Start";
@@ -30,7 +19,6 @@ function App() {
 			</Container>
 		</BrowserRouter>
 	);
->>>>>>> development
 }
 
 export default App;
