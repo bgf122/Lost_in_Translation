@@ -13,15 +13,16 @@
   font-family: "Love Ya Like A Sister", cursive;
 }
 
-
 .DropdownMenu {
   background-color: #e7b355;
   font-family: "Sanchez", serif;
 }
+
 .DropdownItem {
   color: white;
 }
+
 .DropdownItem:hover {
-background-color: white;
-color: #e7b355;
+  background-color: white;
+  color: #e7b355;
 }
