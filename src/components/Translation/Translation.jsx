@@ -29,12 +29,9 @@ const Translation = () => {
 
         if (letters.length > 0) {
             let userResponse = await addTranslation(user, text)
-            console.log(userResponse)
             storageSave("translate-user", userResponse)
             setUser( storageRead("translate-user") )
-        }
-        
-        
+        }   
     }
 
     return (
@@ -42,7 +39,7 @@ const Translation = () => {
             <input type="text" value={text} onChange={(text) => handleTextChange(text)}></input><Button onClick={() => translate()}>Translate</Button>
             <Container>
                 {translation.map((letter, index) => {
-                    return <SignSymbol key={index} letter={letter} />
+                    return <SignSymbol key={`${index}${letter}`} letter={letter} />
                 })}
             </Container>
         </>
