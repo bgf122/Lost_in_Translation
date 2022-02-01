@@ -10,7 +10,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<NavBar />
-			<Container className="p-3">
+			<Container fluid className="ContainerTop">
 				<Routes>
 					<Route path="/" element={<Start />} />
 					<Route path="/translate" element={<Translate />} />
