@@ -8,7 +8,6 @@ const Profile = () => {
         <>
             <ProfileHeader />
             <ProfileTranslateHistory />
-
         </>
     )
 }
