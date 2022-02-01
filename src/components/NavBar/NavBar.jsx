@@ -5,18 +5,17 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
 import NavLink from "react-bootstrap/NavLink";
-import ProfileHeader from "../Profile/ProfileHeader";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, setUser } = useUser();
 
-  const logout = () => {
-    localStorage.clear();
-    setUser(null);
-    navigate("/");
-  };
+    const logout = () => {
+        localStorage.clear()
+        setUser(null)
+        navigate("/")
+    }
 
   const navigateToPath = () => {
     let path = "";
@@ -30,19 +29,16 @@ const NavBar = () => {
     }
 
     return (
-      <Dropdown.Item
-        className={styles.DropdownItem}
-        onClick={() => navigate(`/${path}`)}
-      >
+      <Dropdown.Item className={ styles.DropdownItem } onClick={() => navigate(`/${path}`)}>
         <h5>{text}</h5>
       </Dropdown.Item>
     );
   };
 
   return (
-    <Navbar className={styles.Navbar} expand="lg">
+    <Navbar className={ styles.Navbar }  expand="lg">
       <Container className={styles.ContainerTop}>
-        <Navbar.Brand href="/" className={styles.Brand}>
+        <Navbar.Brand href="/" className={ styles.Brand }>
           <img
             alt=""
             src="/assets/Logo.png"
@@ -51,20 +47,14 @@ const NavBar = () => {
           ></img>{" "}
           Lost in Translation
         </Navbar.Brand>
-
-        {user !== null ? <ProfileHeader /> : <></>}
-
         {user !== null ? (
           <Dropdown>
-            <Dropdown.Toggle as={NavLink} className={styles.DropdownToggle}>
+            <Dropdown.Toggle as={NavLink} className={ styles.DropdownToggle }>
               <img src="/assets/user.png" width={"50 px"} alt="user logo"></img>
             </Dropdown.Toggle>
-            <Dropdown.Menu className={styles.DropdownMenu}>
+            <Dropdown.Menu className={ styles.DropdownMenu }>
               {navigateToPath()}
-              <Dropdown.Item
-                className={styles.DropdownItem}
-                onClick={() => logout()}
-              >
+              <Dropdown.Item className={ styles.DropdownItem } onClick={() => logout()}>
                 <h5>Logout</h5>
               </Dropdown.Item>
             </Dropdown.Menu>
