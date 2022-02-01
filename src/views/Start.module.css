@@ -1,9 +1,12 @@
 .ContainerStart {
+  width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #ffc75f;
+
   padding: 4%;
-  padding-bottom: 8em;
+}
+.ContainerTop {
+  background-color: #ffc75f;
 }
 
 .ColLeft {

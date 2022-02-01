@@ -17,12 +17,10 @@
   background-color: #e7b355;
   font-family: "Sanchez", serif;
 }
-
 .DropdownItem {
   color: white;
 }
-
 .DropdownItem:hover {
-  background-color: white;
-  color: #e7b355;
+background-color: white;
+color: #e7b355;
 }
