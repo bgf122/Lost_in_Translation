@@ -8,7 +8,7 @@ const Start = () => {
     return(
         <>
         <Container className={ styles.ContainerStart } >
-            <Row >
+            <Row className="justify-content-md-center" >
                 <Col  className={ styles.ColLeft }>
                     <img src="/assets/Logo.png" alt="" width={"150 px"}></img>
                 </Col>

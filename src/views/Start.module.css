@@ -1,25 +1,31 @@
-.ContainerStart{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.ContainerStart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-    
-    padding: 4%;
-    
-    
+  padding: 4%;
 }
-.ContainerTop{
-    background-color: #E7B355;
+.ContainerTop {
+  background-color: #ffc75f;
 }
 
-.ColLeft{
-   text-align: center;
-    padding: 2%;
-   
+.ColLeft {
+  text-align: center;
+  
 }
 
-.ColRight{
-    padding: 2%;
-   align-self: center;
-   color: white
+.ColRight {
+  
+  align-self: center;
+  color: white;
+ 
+}
+h2 {
+    white-space: nowrap;
+  font-family: "Love Ya Like A Sister", cursive;
+  
+}
+p {
+  font-size: 1.5em;
+  font-family: "Sanchez", serif;
 }

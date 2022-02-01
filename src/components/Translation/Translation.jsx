@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import styles from "./Translation.module.css";
 
 const Translation = () => {
   const [text, setText] = useState("");
@@ -40,7 +41,7 @@ const Translation = () => {
 
   return (
     <>
-      <Container>
+      <Container className={styles.ContainerInput}>
         <Row className="justify-content-md-center">
           <Col lg="6">
             <InputGroup className="mb-3">
@@ -51,15 +52,22 @@ const Translation = () => {
                 value={text}
                 onChange={(text) => handleTextChange(text)}
               />
-              <Button onClick={() => translate()}>Translate</Button>
+              <Button
+                className={styles.ButtonTranslate}
+                onClick={() => translate()}
+              >
+                Translate
+              </Button>
             </InputGroup>
-            <Container className="p-5">
-              {translation.map((letter, index) => {
-                return <SignSymbol key={index} letter={letter} />;
-              })}
-            </Container>
           </Col>
         </Row>
+      </Container>
+      <Container fluid>
+        <Container className={styles.ContainerTranslations}>
+          {translation.map((letter, index) => {
+            return <SignSymbol key={index} letter={letter} />;
+          })}
+        </Container>
       </Container>
     </>
   );

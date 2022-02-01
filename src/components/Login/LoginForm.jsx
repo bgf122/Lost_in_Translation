@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../../api/user";
+import styles from "./LoginForm.module.css"
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
@@ -79,12 +80,12 @@ const LoginForm = () => {
                   placeholder="What's your name?"
                   {...register("username", usernameConfig)}
                 />
-                <Button
+                <Button className={ styles.ButtonLogin }
                   type="submit"
                   disabled={loading}
                   variant="outline-secondary"
                 >
-                  <span className="material-icons blue md-48">
+                  <span className="material-icons purple md-48">
                     arrow_circle_right
                   </span>
                 </Button>

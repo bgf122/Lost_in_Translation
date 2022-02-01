@@ -29,7 +29,7 @@ const NavBar = () => {
     }
 
     return (
-      <Dropdown.Item onClick={() => navigate(`/${path}`)}>
+      <Dropdown.Item className={ styles.DropdownItem } onClick={() => navigate(`/${path}`)}>
         <h5>{text}</h5>
       </Dropdown.Item>
     );
