@@ -7,7 +7,7 @@ import styles from "./Start.module.css"
 const Start = () => {
     return(
         <>
-        <Container className={ styles.ContainerStart } >
+        <Container fluid className={ styles.ContainerStart } >
             <Row className="justify-content-md-center" >
                 <Col  className={ styles.ColLeft }>
                     <img src="/assets/Logo.png" alt="" width={"150 px"}></img>
