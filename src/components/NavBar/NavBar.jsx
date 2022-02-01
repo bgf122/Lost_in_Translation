@@ -11,7 +11,7 @@ const NavBar = () => {
     const location = useLocation()
     const { user, setUser } = useUser()
 
-    const logOut = () => {
+    const logout = () => {
         localStorage.clear()
         setUser(null)
         navigate("/")
@@ -41,7 +41,7 @@ const NavBar = () => {
                     <Dropdown.Toggle as={NavLink}><img src="/assets/user.png" width={"50 px"} alt="user logo"></img></Dropdown.Toggle>
                     <Dropdown.Menu>
                         {navigateToPath()}
-                        <Dropdown.Item onClick={() => logOut()}><h5>Logout</h5></Dropdown.Item>
+                        <Dropdown.Item onClick={() => logout()}><h5>Logout</h5></Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown> : <></>} 
             </Container>

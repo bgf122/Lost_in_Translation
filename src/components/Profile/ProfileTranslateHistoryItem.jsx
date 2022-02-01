@@ -1,6 +1,8 @@
+import ListGroup from "react-bootstrap/ListGroup";
+
 const ProfileTranslateHistoryItem = ({ translation }) => {
     return (
-            <li>{ translation }</li>
+            <ListGroup.Item>{ translation }</ListGroup.Item>
     )
 }
 
