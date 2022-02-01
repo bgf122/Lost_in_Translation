@@ -1,7 +1,7 @@
 # lost-in-translation
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-
+[![web](https://img.shields.io/static/v1?logo=icloud&message=Online&label=web&color=success)](https://lost-in-translation-2022.herokuapp.com/)
 Lost in Translation - Single Page Application with React.js library - Noroff Assignment 3
 
 The application has one main feature: to act as a “translator” from regular text to sign language. The application translates words and short sentences to American sign language. 
