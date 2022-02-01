@@ -69,11 +69,11 @@ const LoginForm = () => {
 
   return (
     <>
-      <Container>
+      <Container className={ styles.LoginFormContainer}>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Row className="justify-content-md-center">
             <Col lg={6}>
-              <InputGroup className="mb-3">
+              <InputGroup className={ styles.InputGroup}>
                 <FormControl
                   size="lg"
                   type="text"

@@ -40,7 +40,7 @@ const Translation = () => {
 
   return (
     <>
-      <Container className={styles.ContainerInput}>
+      <Container fluid className={styles.ContainerInput}>
         <Row className="justify-content-md-center">
           <Col lg="6">
             <InputGroup className="mb-3">
