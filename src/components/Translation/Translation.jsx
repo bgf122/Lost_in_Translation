@@ -32,7 +32,6 @@ const Translation = () => {
 
     if (letters.length > 0) {
       let userResponse = await addTranslation(user, text);
-      console.log(userResponse);
       storageSave("translate-user", userResponse);
       setUser(storageRead("translate-user"));
     }
@@ -55,7 +54,7 @@ const Translation = () => {
             </InputGroup>
             <Container className="p-5">
               {translation.map((letter, index) => {
-                return <SignSymbol key={index} letter={letter} />;
+                return <SignSymbol key={`${index}${letter}`} letter={letter} />;
               })}
             </Container>
           </Col>
