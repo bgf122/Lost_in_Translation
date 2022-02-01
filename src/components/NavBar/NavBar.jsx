@@ -11,11 +11,11 @@ const NavBar = () => {
   const location = useLocation();
   const { user, setUser } = useUser();
 
-  const logOut = () => {
-    localStorage.clear();
-    setUser(null);
-    navigate("/");
-  };
+    const logout = () => {
+        localStorage.clear()
+        setUser(null)
+        navigate("/")
+    }
 
   const navigateToPath = () => {
     let path = "";
@@ -54,7 +54,7 @@ const NavBar = () => {
             </Dropdown.Toggle>
             <Dropdown.Menu className={ styles.DropdownMenu }>
               {navigateToPath()}
-              <Dropdown.Item className={ styles.DropdownItem } onClick={() => logOut()}>
+              <Dropdown.Item className={ styles.DropdownItem } onClick={() => logout()}>
                 <h5>Logout</h5>
               </Dropdown.Item>
             </Dropdown.Menu>
