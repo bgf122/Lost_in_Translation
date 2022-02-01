@@ -1,0 +1,25 @@
+.ContainerStart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    
+    padding: 4%;
+    
+    
+}
+.ContainerTop{
+    background-color: #E7B355;
+}
+
+.ColLeft{
+   text-align: center;
+    padding: 2%;
+   
+}
+
+.ColRight{
+    padding: 2%;
+   align-self: center;
+   color: white
+}

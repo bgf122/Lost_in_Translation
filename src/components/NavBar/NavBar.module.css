@@ -1,0 +1,22 @@
+.DropdownToggle::after {
+    display: none;
+    
+}
+
+.Navbar {
+    background-color: #E7B355;
+    border: black;
+
+}
+
+.Brand{
+    font-size: xx-large;
+    color: white !important
+}
+
+.DropdownMenu{
+    background-color: #FFC75F;
+}
+.DropdownItem{
+    
+}
